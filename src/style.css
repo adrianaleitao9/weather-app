@@ -15,12 +15,14 @@ body {
     display: block;
     max-width: 600px;
     margin: 50px auto;
-    padding: 50px;
-    }
+    padding:50px;
+}
+
 a {
     color:#c884a6;
 }
- #search-text-input{
+
+#search-text-input{
     background-color: #f3f4f9;
     border-radius: 10px;
     border-style:none;
@@ -28,7 +30,8 @@ a {
     margin: 20px;
     padding:15px;
     width: 400px;
- }
+}
+
 #search-input{
     border-radius: 10px;
     border: none;
@@ -37,6 +40,7 @@ a {
     padding: 15px;
     width: 100px;
 } 
+
 hr{ 
     background-color: #efe3f0f9;
     border: none;
@@ -47,10 +51,12 @@ hr{
     display: flex;
     flex-direction: row;
 }
+
 .city-weather-details{
     flex-grow: 2;
     text-align: left;
 }
+
 .city{
     color:#c884a6 ;
     font-size: 25px;
@@ -60,12 +66,14 @@ hr{
     text-decoration: underline;
     font-weight: 200;
 }
+
 .city-temperature-container{
     display: flex;
     flex-grow: 1;
     text-align: center;
     margin: 20px ;
 }
+
 .city-weather-icon{
         font-size: 44px;
         margin-top: 22px;
@@ -82,6 +90,7 @@ hr{
     
     
 }
+
 .temperature-unit{
     color: #c884a6;
     flex-grow: 1;
@@ -90,9 +99,11 @@ hr{
     font-weight: 300;
     padding-top: 10px;
 }
+
 #current-date-stats{
     font-weight: bold;
 }
+
 footer{
     display: block;
     margin-top: 40px;
