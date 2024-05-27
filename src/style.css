@@ -1,33 +1,96 @@
 body {
-    background-color: #826db6;
+    align-items: center;
+    background: radial-gradient(circle at 10% 20%, rgb(148, 241, 246) 0%, rgb(148, 189, 246) 100.7%);
+    display: flex;
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;
+    justify-content: center;
+    min-height: 100vh;
 }
 
 .weather-app {
-    display: block;
+    border-radius:30px;
+    box-shadow: 4px 3px 12px 0px rgba(0, 0, 0, 0.39);
     background-color: white;
+    display: block;
     max-width: 600px;
     margin: 50px auto;
     padding: 50px;
-    border-radius:30px;
-    box-shadow: 4px 3px 12px 0px rgba(0, 0, 0, 0.39);
-}
+    }
 a {
-    color: #f70776;
+    color:#c884a6;
 }
+ #search-text-input{
+    background-color: #ccd5ff;
+    border-radius: 10px;
+    border-style:none;
+    color: black;
+    margin: 20px;
+    padding:15px;
+    width: 400px;
+ }
+#search-input{
+    border-radius: 10px;
+    border: none;
+    background-color:#5da6de; 
+    color: whitesmoke; 
+    padding: 15px;
+    width: 100px;
+} 
+hr{ 
+    background-color: #efe3f0f9;
+    border: none;
+    height: 1px;
+}
+
 .city-weather-container{
     display: flex;
     flex-direction: row;
 }
 .city-weather-details{
-    flex-grow: 3;
-    max-width:50% ;
-    padding: 30px 30px 30px 0px;
+    flex-grow: 2;
     text-align: left;
 }
-.city-weather-temperature {
+.city{
+    color:#c884a6 ;
+    font-size: 25px;
+}
+
+#current-date-stats span{
+    text-decoration: underline;
+}
+.city-temperature-container{
+    display: flex;
     flex-grow: 1;
     text-align: center;
-    margin:0 auto;
-    padding: 30px;
-    max-width: 50%;
+    margin: 20px ;
+}
+.city-weather-icon{
+        font-size: 44px;
+        margin-top: 22px;
+        flex-grow: 1;
+}
+
+.city-weather-temperature {
+     color: #c884a6;
+     font-size: 90px;
+     flex-grow: 2;
+     text-align: center;
+    font-weight: 300;
+    margin-left: 10px;
+    
+    
+}
+.temperature-unit{
+    color: #c884a6;
+    flex-grow: 1;
+    font-size: 25px;
+    text-align: center;
+    font-weight: 300;
+    padding-top: 10px;
+}
+footer{
+    display: block;
+    margin:20px auto;
+    text-align: center;
 }
