@@ -21,7 +21,7 @@ a {
     color:#c884a6;
 }
  #search-text-input{
-    background-color: #ccd5ff;
+    background-color: #f3f4f9;
     border-radius: 10px;
     border-style:none;
     color: black;
@@ -58,6 +58,7 @@ hr{
 
 #current-date-stats span{
     text-decoration: underline;
+    font-weight: 200;
 }
 .city-temperature-container{
     display: flex;
@@ -89,8 +90,11 @@ hr{
     font-weight: 300;
     padding-top: 10px;
 }
+#current-date-stats{
+    font-weight: bold;
+}
 footer{
     display: block;
-    margin:20px auto;
+    margin-top: 40px;
     text-align: center;
 }
