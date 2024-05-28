@@ -32,6 +32,7 @@ function capitalize(text){
 
 function searchSubmit(event){
     event.preventDefault()
+    
     let searchInput = document.querySelector("#search-text-input")
     searchCity(searchInput.value);
 }
@@ -61,25 +62,35 @@ function getForecast(city){
     axios.get(apiUrl).then(displayForecast);
 }
 
+function formatDay(timestamp){
+    let days=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+    let date=new Date(timestamp*1000);
+
+    return days[date.getDay()];
+}
 
 function displayForecast(response){
-    let days = ["Tues", "Wed", "Thur", "Fri", "Sat"];
-   
     let forecastHtml = "";
 
-    days.forEach(function(day){
+    response.data.daily.forEach(function(day,index) {
+       
+        if (index < 5){
+
         forecastHtml =
-            forecastHtml + 
+            forecastHtml +
             `
             <div class="weather-forecast-day">
-                <div class="weather-forecast-date">${day}</div>
-                <div class="weather-forecast-icon">🌤️</div>
+                <div class="weather-forecast-date">${formatDay(day.time)}</div>
+                <div >
+                    <img src="${day.condition.icon_url}" class="weather-forecast-icon" />
+                </div>
                 <div class="weather-forecast-temperature">
-                    <div class="weather-forecast-temperature-max">13°</div>
-                    <div class="weather-forecast-temperature-min">4°</div>
+                    <div class="weather-forecast-temperature-max">${Math.round(day.temperature.maximum)}°</div>
+                    <div class="weather-forecast-temperature-min">${Math.round(day.temperature.maximum)}°</div>
                 </div>
             </div>
             `;
+        }
     });
 
     let forecastElement = document.querySelector("#forecast");
