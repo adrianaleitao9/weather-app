@@ -55,13 +55,38 @@ function formatDate(date){
     return `${formatedDate} ${hours}:${minutes}, `
 }
 
+function displayForecast(){
+    let days = ["Tues", "Wed", "Thur", "Fri", "Sat"];
+   
+    let forecastHtml = "";
+
+    days.forEach(function(day){
+        forecastHtml =
+            forecastHtml + 
+            `
+            <div class="weather-forecast-day">
+                <div class="weather-forecast-date">${day}</div>
+                <div class="weather-forecast-icon">🌤️</div>
+                <div class="weather-forecast-temperature">
+                    <div class="weather-forecast-temperature-max">13°C</div>
+                    <div class="weather-forecast-temperature-min">4°C</div>
+                </div>
+            </div>
+            `;
+    });
+
+    let forecastElement = document.querySelector("#forecast");
+    forecastElement.innerHTML = forecastHtml;
+    
+};
+
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit",searchSubmit);
 
 let currentDateElement = document.querySelector("#current-date");
 let currentDate = new Date();
 
-
-
 currentDateElement.innerHTML = formatDate(currentDate);
+
 searchCity("vila Real");
+displayForecast();

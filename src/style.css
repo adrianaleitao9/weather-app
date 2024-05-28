@@ -48,15 +48,19 @@ hr{
     flex-direction: row;
 }
 
+.city {
+    color: #c884a6;
+    font-size: 25px;
+}
+
 .city-weather-details{
     flex-grow: 2;
     text-align: left;
     font-weight: 350;
 }
 
-.city{
-    color:#c884a6 ;
-    font-size: 25px;
+#current-date-stats {
+    font-weight: bold;
 }
 
 #current-date-stats span{
@@ -72,9 +76,9 @@ hr{
 }
 
 .city-weather-icon{
-        font-size: 44px;
-        margin-top: 22px;
-        flex-grow: 1;
+    font-size: 44px;
+    flex-grow: 1;
+    margin-top: 22px;
 }
 
 .city-weather-temperature {
@@ -84,8 +88,6 @@ hr{
     text-align: center;
     font-weight: 300;
     margin-left: 10px;
-    
-    
 }
 
 .temperature-unit{
@@ -96,12 +98,6 @@ hr{
     font-weight: 300;
     padding-top: 10px;
 }
-
-#current-date-stats{
-    font-weight: bold;
-}
-
-
 
 .weather-forecast-container{
     display: flex;
