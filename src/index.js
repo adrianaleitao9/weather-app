@@ -17,6 +17,10 @@ function updateWeather(response){
     let weatherIcon = document.querySelector("#icon");
     weatherIcon.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" >`;
 
+     let currentDateElement = document.querySelector("#current-date");
+    currentDateElement.innerHTML = formatDate(response.data.time);
+
+
     getForecast(response.data.city);
 }
 
@@ -36,9 +40,10 @@ function searchSubmit(event){
     let searchInput = document.querySelector("#search-text-input")
     searchCity(searchInput.value);
 }
-function formatDate(date){
+function formatDate(timestamp){
+    let date = new Date(timestamp * 1000);
     let minutes = date.getMinutes();
-    let hours = date.getHours()
+    let hours = date.getHours();
 
     if(hours < 10){
         hours =`0${hours}`;
@@ -50,10 +55,10 @@ function formatDate(date){
 
     let day = date.getDay();
 
-    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
     let formatedDate = days[day];
-    return `${formatedDate} ${hours}:${minutes}, `
+    return `${formatedDate} ${hours}:${minutes}, `;
 }
 
 function getForecast(city){
@@ -101,10 +106,6 @@ function displayForecast(response){
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit",searchSubmit);
 
-let currentDateElement = document.querySelector("#current-date");
-let currentDate = new Date();
-
-currentDateElement.innerHTML = formatDate(currentDate);
 
 searchCity("vila real");
 

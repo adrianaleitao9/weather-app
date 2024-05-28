@@ -35,8 +35,13 @@ body {
     color: whitesmoke; 
     padding: 15px;
     width: 100px;
+    transition: 2ms;
+    cursor: pointer;
 } 
-
+#search-input:hover{
+    background-color: #e1e5f5;
+    color: #1c5d8f;
+}
 hr{ 
     background-color: #efe3f0f9;
     border: none;
@@ -77,26 +82,23 @@ hr{
 
 .city-weather-icon{
     font-size: 44px;
-    flex-grow: 1;
     margin-top: 22px;
 }
 
 .city-weather-temperature {
     color: #c884a6;
     font-size: 90px;
-    flex-grow: 2;
     text-align: center;
     font-weight: 300;
     margin-left: 10px;
 }
 
 .temperature-unit{
-    color: #c884a6;
-    flex-grow: 1;
+    color:#c884a6;
     font-size: 25px;
     text-align: center;
-    font-weight: 300;
     padding-top: 10px;
+    font-weight: 300;
 }
 
 .weather-forecast-container{
