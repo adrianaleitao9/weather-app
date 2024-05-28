@@ -1,6 +1,4 @@
-function updateWeather(response){
-    console.log(response.data);
-    
+function updateWeather(response){  
     let currentTemperature = document.querySelector(".city-weather-temperature");
     currentTemperature.innerHTML = Math.round(response.data.temperature.current);
 
@@ -18,16 +16,18 @@ function updateWeather(response){
   
     let weatherIcon = document.querySelector("#icon");
     weatherIcon.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" >`;
+
+    getForecast(response.data.city);
 }
 
 function searchCity(city){
-let apiKey = "f41of6379tbae2fe2bd3f79075063741";
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&unit=metric`
-axios.get(apiUrl).then(updateWeather);
+    let apiKey = "f41of6379tbae2fe2bd3f79075063741";
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&unit=metric`;
+    axios.get(apiUrl).then(updateWeather);
 }
     
 function capitalize(text){
-return text.charAt(0).toUpperCase() + text.substring(1).toLowerCase();
+    return text.charAt(0).toUpperCase() + text.substring(1).toLowerCase();
 }
 
 function searchSubmit(event){
@@ -55,7 +55,14 @@ function formatDate(date){
     return `${formatedDate} ${hours}:${minutes}, `
 }
 
-function displayForecast(){
+function getForecast(city){
+    let apiKey = "f41of6379tbae2fe2bd3f79075063741";
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&unit=metric`;
+    axios.get(apiUrl).then(displayForecast);
+}
+
+
+function displayForecast(response){
     let days = ["Tues", "Wed", "Thur", "Fri", "Sat"];
    
     let forecastHtml = "";
@@ -68,8 +75,8 @@ function displayForecast(){
                 <div class="weather-forecast-date">${day}</div>
                 <div class="weather-forecast-icon">🌤️</div>
                 <div class="weather-forecast-temperature">
-                    <div class="weather-forecast-temperature-max">13°C</div>
-                    <div class="weather-forecast-temperature-min">4°C</div>
+                    <div class="weather-forecast-temperature-max">13°</div>
+                    <div class="weather-forecast-temperature-min">4°</div>
                 </div>
             </div>
             `;
@@ -88,5 +95,5 @@ let currentDate = new Date();
 
 currentDateElement.innerHTML = formatDate(currentDate);
 
-searchCity("vila Real");
-displayForecast();
+searchCity("vila real");
+
